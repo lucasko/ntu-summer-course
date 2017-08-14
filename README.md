@@ -1,4 +1,8 @@
-### NTU SUMMER COUESE
+Ntu Summer Course
+===================
+
+
+### Install Elasticsearch
 ```sh
 ntu:ntu
 
@@ -28,3 +32,67 @@ vim config/elasticsearch.yml
 http://192.168.30.131:9200/_plugin/head/
 
 ```
+
+
+
+
+
+
+### Create
+```sh
+POST  ntu/student/1
+{
+  "name": "lucas",
+  "email": "lucas@gmail.com",
+  "age": 25
+}
+```
+
+### Update
+```sh
+PUT  ntu/student/1
+{
+  "name": "lucas ko",
+  "email": "lucas@gmail.com",
+  "age": 27
+}
+```
+
+
+### Query
+```sh
+POST ntu/student/_search
+{
+  "query": {
+    "match": {
+      "age": 25
+    }
+  }
+}
+```
+
+
+### Aggregation
+```sh
+POST ntu/student/_search
+
+{
+  "query": {
+    "bool": {
+      "must": []
+    }
+  },
+  "aggs": {
+    "_age": {
+      "terms": {
+        "field": "age",
+        "size": 1000
+      }
+    }
+  }
+}
+```
+
+
+
+
