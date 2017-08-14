@@ -4,6 +4,7 @@ Ntu Summer Course
 
 ### Install Elasticsearch
 ```sh
+
 ntu:ntu
 
 ifconfig
@@ -12,15 +13,18 @@ windows : putty
 
 ssh@192.168.30.131
 
-wget https://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.3.0/elasticsearch-2.3.0.tar.gz
+git clone https://github.com/lucasko-tw/ntu-summer-course.git
 
-./downlaod.sh
+cd ntu-summer-course
+git pull
+
+./download.sh
+
+tar xvf elasticsearch-2.3.0.tar.gz
 
 cd elasticsearch-2.3.0
 
 ./bin/plugin install mobz/elasticsearch-head
-
-tar xvf elasticsearch-2.3.0.tar.gz
 
 vim config/elasticsearch.yml 
   cluster.name: lucas
@@ -28,6 +32,8 @@ vim config/elasticsearch.yml
   network.host: 0.0.0.0
 
 ./bin/elasticsearch
+
+./bin/elasticsearch -d
 
 http://192.168.30.131:9200/_plugin/head/
 
