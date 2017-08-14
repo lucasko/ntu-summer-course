@@ -10,6 +10,12 @@ ssh@192.168.30.131
 
 wget https://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.3.0/elasticsearch-2.3.0.tar.gz
 
+./downlaod.sh
+
+cd elasticsearch-2.3.0
+
+./bin/plugin install mobz/elasticsearch-head
+
 tar xvf elasticsearch-2.3.0.tar.gz
 
 vim config/elasticsearch.yml 
